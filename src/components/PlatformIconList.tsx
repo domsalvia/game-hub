@@ -11,7 +11,7 @@ import {
   FaLinux,
   FaAndroid,
 } from "react-icons/fa";
-import { IconTree, IconType } from "react-icons";
+import { IconType } from "react-icons";
 
 interface Props {
   platforms: Platform[];
