@@ -61,6 +61,7 @@ function App() {
                 setGameQuery({ ...gameQuery, sortOrder })
               }
             />
+            
           </HStack>
         </Box>
 
