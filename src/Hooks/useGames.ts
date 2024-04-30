@@ -20,7 +20,7 @@ export interface Game {
 }
 
 const useGames = (gameQuery: GameQuery) =>
-  useQuery({
+  useQuery<FetchResponse<Game>, Error>({
     queryKey: [...CACHE_KEY_GAMES, gameQuery],
     queryFn: () =>
       apiClient
