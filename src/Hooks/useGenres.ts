@@ -1,7 +1,6 @@
 import { CACHE_KEY_GENRES } from "../data/constants";
 import { useQuery } from "@tanstack/react-query";
-import apiClient from "../Services/apiClient";
-import { FetchResponse } from "../Services/apiClient";
+import ApiClient from "../Services/apiClient";
 import genres from "../data/genres";
 
 export interface Genre {
@@ -10,15 +9,12 @@ export interface Genre {
   image_background: string;
 }
 
-//const useGenres = () => ({ data: genres, isLoading: false, error: null });
+const apiClient = new ApiClient<Genre>("/genres");
 
 const useGenres = () =>
   useQuery({
     queryKey: CACHE_KEY_GENRES,
-    queryFn: () =>
-      apiClient
-        .get<FetchResponse<Genre>>("genres")
-        .then((res) => res.data),
+    queryFn: apiClient.getAll,
     staleTime: (24*60*60*1000), //24h
     initialData: { count: genres.length, results: genres }
   });
