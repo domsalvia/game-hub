@@ -4,6 +4,7 @@ import apiSecrets from "./apiSecrets";
 export interface FetchResponse<T> {
   count: number;
   results: T[];
+  next: string | null;
 }
 
 const axiosInstace = axios.create({
