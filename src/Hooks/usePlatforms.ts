@@ -1,11 +1,10 @@
 
-import { FetchResponse } from "../Services/apiClient";
-import apiClient from "../Services/apiClient";
-import { CACHE_KEY_PARENT_PLATFORMS } from "../data/constants";
 import { useQuery } from "@tanstack/react-query";
+import apiClient, { FetchResponse } from "../Services/apiClient";
+import { CACHE_KEY_PARENT_PLATFORMS } from "../data/constants";
 import platforms from "../data/platforms";
 
-interface Platform {
+export interface Platform {
     id: number;
     name: string;
     slug: string;
