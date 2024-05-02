@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import ApiClient from "../Services/apiClient";
 import { CACHE_KEY_GAME } from "../data/constants";
-import { Game } from "../Entities/Game";
+import Game from "../Entities/Game";
 
 const apiClient = new ApiClient<Game>(`/games`);
 

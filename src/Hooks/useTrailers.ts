@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
-import { Trailer } from "../Entities/Trailer";
+import Trailer from "../Entities/Trailer";
 import ApiClient from "../Services/apiClient";
 import { CACHE_KEY_MOVIES } from "../data/constants";
 

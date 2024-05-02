@@ -4,7 +4,7 @@ import ApiClient from "../Services/apiClient";
 import { CACHE_KEY_PARENT_PLATFORMS } from "../data/constants";
 import platforms from "../data/platforms";
 import ms from 'ms';
-import { Platform } from "../Entities/Platform";
+import Platform from "../Entities/Platform";
 
 const apiClient = new ApiClient<Platform>("/platforms/lists/parents");
 
