@@ -5,6 +5,7 @@ export interface FetchResponse<T> {
   count: number;
   results: T[];
   next: string | null;
+
 }
 
 const axiosInstace = axios.create({
@@ -24,6 +25,12 @@ class ApiClient<T> {
   getAll = (config: AxiosRequestConfig)  => {
     return axiosInstace
         .get<FetchResponse<T>>(this.endpoint, config)
+        .then(res => res.data);
+  }
+  
+  get = (id: number | string)  => {
+    return axiosInstace
+        .get<T>(this.endpoint + "/" + id)
         .then(res => res.data);
   }
 }
