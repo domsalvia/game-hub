@@ -4,6 +4,7 @@ import useGame from "../Hooks/useGame";
 import ExpandableText from "./ExpandableText";
 import GameAttributes from "./GameAttributes";
 import TrailerPlayer from "./TrailerPlayer";
+import Screenshots from "./Screenshots";
 
 const GameDetailPage = () => {
   const params = useParams();
@@ -19,6 +20,7 @@ const GameDetailPage = () => {
         <ExpandableText maxChars={300}>{data?.description_raw}</ExpandableText>
         <GameAttributes game={data} />
         <TrailerPlayer id={data.slug} />
+        <Screenshots id={data.slug} />
       </Box>
     </>
   );
