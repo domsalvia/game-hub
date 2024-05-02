@@ -2,13 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import ApiClient from "../Services/apiClient";
 import { CACHE_KEY_GAME } from "../data/constants";
-
-export interface GameDetails {
-  id: number;
-  description_raw: string;
-  slug: string;
-  name: string;
-}
+import { GameDetails } from "../Entities/GameDetails";
 
 const apiClient = new ApiClient<GameDetails>(`/games`);
 
